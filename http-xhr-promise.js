@@ -22,6 +22,11 @@ function httpGet(url) {
     });
 }
 
+function httpPost(url, data) {
+
+}
+
 module.exports = {
-    get: httpGet
+    get: httpGet,
+    post: httpPost,
 };
