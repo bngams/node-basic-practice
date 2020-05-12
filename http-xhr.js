@@ -1,7 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-console.log(XMLHttpRequest);
 
-module.exports = function xhr(method, url, success, error) {
+function httpGet(method, url, success, error) {
+    // require XMLHttpRequest
     let xhr = new XMLHttpRequest();
     // nothing happened - request definition
     xhr.open(method, url);
@@ -19,3 +19,5 @@ module.exports = function xhr(method, url, success, error) {
     // execute request
     xhr.send();
 }
+
+module.exports = httpGet;
