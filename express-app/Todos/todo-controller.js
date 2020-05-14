@@ -1,22 +1,25 @@
-const todos = require('./todo-data');
+var express = require('express');
+var router = express.Router();
+const todosService = require('./todo-service');
 
-// /todos/1
-function findTodoByIndex(index) {
-    return todos[index];
-}
+router.get('/', (req, res) => res.send(todosService.getAllTodos()));
+router.get('/:id', (req, res) => res.send(todosService.findTodoByIndex(req.params.id)))
+router.post('/', (req, res) => {
+    const todo = todosService.createTodo(req.body);
+    if (!todo) res.status(500).send();
+    res.status(201).json(todo);
+});
 
-// /todos
-function getAllTodos() {
-    return todos;
-}
+router.put('/:id', (req, res) => {
+    const todo = todosService.updateTodo(req.params.id, req.body);
+    if (!todo) res.status(404).send();
+    res.status(200).send(todo);
+});
 
-module.exports = {
-    findTodoByIndex,
-    getAllTodos
-}
+router.delete('/:id', (req, res) => {
+    const todo = todosService.deleteTodo(req.params.id);
+    if (!todo) res.status(404).send();
+    res.status(200).send();
+});
 
-// equivalent to 
-// module.exports = {
-//     findTodoByIndex: findTodoByIndex,
-//     getAllTodos: getAllTodos
-// }
+module.exports = router;
