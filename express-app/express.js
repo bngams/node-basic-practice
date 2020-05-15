@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // use body-parser for express
-app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.json()); // for parsing application/json
 
 // use routes in todoCtrl
 app.use('/todos', todosCtrl);

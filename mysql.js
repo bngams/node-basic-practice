@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: '51.83.44.56',
-    port: '32775',
+    port: '32781',
     user: 'root',
     password: 'azerty5+',
     database: 'db_node_tp'
@@ -9,8 +9,8 @@ var connection = mysql.createConnection({
 
 connection.query("SELECT * FROM todos", function (err, result, fields) {
     if (err) throw err;
-    for (const res of result) {
-        console.log(res.completed);
+    for (const row of result) {
+        console.log(row);
     }
 });
 
