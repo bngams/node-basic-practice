@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     port: '32781',
     user: 'root',
     password: 'azerty5+',
-    database: 'db_node_tp'
+    database: 'db_node_tp_gregory'
 });
 
 connection.query("SELECT * FROM todos", function (err, result, fields) {

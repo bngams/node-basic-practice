@@ -1,7 +1,7 @@
 const xhr = require('./http-xhr');
 
 function displayResult(result) {
-    const arrayOfTodos = JSON.parse(result);
+    // const arrayOfTodos = JSON.parse("[{'id': 1}]");
     console.log(result);
 }
 
@@ -10,7 +10,7 @@ function displayError(err) {
 }
 
 xhr('get',
-    'https://jsonplaceholder.typicode.com/todos/1',
+    'https://jsonplaceholder.typicode.com/todos',
     displayResult,
     displayError);
 

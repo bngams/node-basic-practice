@@ -9,6 +9,7 @@ function displayError(err) {
     console.log(err);
 }
 
+// Promise
 http.get('https://jsonplaceholder.typicode.com/todos/1')
     .then(displayResult)
     .catch(displayError);

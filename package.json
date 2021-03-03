@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:http": "node http-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node"
   },
@@ -11,11 +12,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mathjs": "^7.0.0",
     "moment": "^2.25.3",
     "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
     "xmlhttprequest": "^1.8.0"
   }
 }
